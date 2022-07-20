@@ -1,14 +1,14 @@
 ##master_in_javascript
 
 
-{ var a = 10;
+``` var a = 10;
 
   var b = a;
 
   b += 6;
 
-  console.log(b,a); 
-  }
+  console.log(b,a); ```
+  
 
   // so Value changing 
 
