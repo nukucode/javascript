@@ -7,7 +7,9 @@
 
   b += 6;
 
-  console.log(b,a); ```
+  console.log(b,a);
+  ```
+  
   
 
   // so Value changing 
@@ -20,7 +22,8 @@
 
   /// sort function 
 
-  let cars = ['Tata', 'Bmw', 'Frrary' ,'Lemborgny', 'Hero']
+ ``` let cars = ['Tata', 'Bmw', 'Frrary' ,'Lemborgny', 'Hero']
 
   let sort = cars.sort();
   console.log(sort);
+  ```
