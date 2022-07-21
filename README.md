@@ -1,29 +1,13 @@
-##master_in_javascript
+#Master In Javascript 
+
+##Topics --->
+
+1. array.js
+2. clock.js
+3. math.js
+4. cookies.js
+5. localStorate.js
+6. Day.js
 
 
-``` var a = 10;
-
-  var b = a;
-
-  b += 6;
-
-  console.log(b,a);
-  ```
-  
-  
-
-  // so Value changing 
-
-
-  /// how to use quotes in string -->
-  const nam = "We are \"Avengers\"";
-  console.log(nam);
-
-
-  /// sort function 
-
- ``` let cars = ['Tata', 'Bmw', 'Frrary' ,'Lemborgny', 'Hero']
-
-  let sort = cars.sort();
-  console.log(sort);
-  ```
+###Provide By theRogersak
