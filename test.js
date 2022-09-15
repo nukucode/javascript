@@ -1,9 +1,16 @@
+// const demo = document.getElementsByClassName("demo");
+// const btn = document.getElementById("btn");
+
+// function postion() {
+//   const postion = btn.scrollTop;
+
+//   demo.innerText = postion;
+// }
+
+// postion();
 
 
- function run(){
-    console.log(foo);
-    const foo = 'foo';
-    console.log(foo);
- }
-
- run();
+console.log(window.innerHeight)
+console.log(window.outerHeight)
+console.log(window.innerWidth)
+console.log(window.outerWidth)
