@@ -19,6 +19,24 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 7. Math.js
 8. ImgAuto.js
 9. array.js
+10. Spread Operator
+11. Rest Operator
+12. for (of)
+13. flat
+14. flatMap
+15. Amazing js one line codes
+16. Code Snippet
+17. weakMap
+18. weakSet
+19. Object Methods
+20. Genrate Compact Number
+21. Nullish Coalescing (??)
+21. Notification Api
+22. Getters and Setters
+23. Optional Chaning
+24. Destructuring Arrays
+25. Destructuring Objects
+
 
 ## 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/therogersak)
