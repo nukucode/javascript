@@ -1,16 +1,9 @@
-// const demo = document.getElementsByClassName("demo");
-// const btn = document.getElementById("btn");
 
-// function postion() {
-//   const postion = btn.scrollTop;
+async function add(a,b){
+    return a+b;
+}
 
-//   demo.innerText = postion;
-// }
+const promise = add(1,2);
 
-// postion();
-
-
-console.log(window.innerHeight)
-console.log(window.outerHeight)
-console.log(window.innerWidth)
-console.log(window.outerWidth)
+promise.then((e) => console.log('Res1',e))
+promise.then((e) => console.log('Res2',e))

@@ -38,7 +38,7 @@ function showNumbers(a, b, c, d) {
 
 const cord = [2, 3, 4, 5];
 
-showNumbers(...cord)
+showNumbers(...cord);
 
 /// with an array literal
 
@@ -67,3 +67,15 @@ let obj2 = {
 
 const combined = { ...obj1, ...obj2 };
 console.log(combined);
+
+// one more example
+
+// old method
+const details = { name: "Ankit" };
+const stats = { work: "from home" };
+
+const team = Object.assign({}, details, stats);
+
+// new method
+
+const team1 = { ...details, ...stats };
