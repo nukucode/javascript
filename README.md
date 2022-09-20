@@ -1,4 +1,3 @@
-
 # Master In Javascript
 
 A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
@@ -6,7 +5,6 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 ## Authors
 
 - [@therogersak](https://www.github.com/therogersak)
-
 
 ## Lessons Learned
 
@@ -31,19 +29,22 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 19. Object Methods
 20. Genrate Compact Number
 21. Nullish Coalescing (??)
-21. Notification Api
-22. Getters and Setters
-23. Optional Chaning
-24. Destructuring Arrays
-25. Destructuring Objects
-
+22. Notification Api
+23. Getters and Setters
+24. Optional Chaning
+25. Destructuring Arrays
+26. Destructuring Objects
+27. Loops
+28. Math Functions
+29. Detect OS System
+30. String Methods
+31. String Methods
 
 ## 🔗 Links
+
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/therogersak)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/therogersak)
-
 
 ## Feedback
 
 If you have any feedback, please reach out to us at therogersak@gmail.com
-
