@@ -39,6 +39,10 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 29. Detect OS System
 30. String Methods
 31. String Methods
+32. Constructor
+33. Call, Apply, Bind
+34. Array Properties
+35. Js Tips Tricks
 
 ## 🔗 Links
 
