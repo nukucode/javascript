@@ -43,6 +43,10 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 33. Call, Apply, Bind
 34. Array Properties
 35. Js Tips Tricks
+36. Errors IN JS
+37. DOM Tricks
+38. Intl.NumberFormat
+39. Date CheatSheet
 
 ## 🔗 Links
 
