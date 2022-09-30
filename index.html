@@ -6,16 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>countDown</title>
   </head>
+  <style>
+    .container::before {
+      content: "Hello Bahi";
+    }
+  </style>
   <body>
-    <h1>Hello JI</h1>
-    <button onclick="postion()">Click Here</button>
-    <div class="demo">jjj</div>
-    <h1>Hello World</h1>
-    <br />
-    <h1>Hello World</h1>
-    <h3 id="h3">fdg</h3>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam nulla, dolorum vel expedita eveniet repellat quam similique ea eligendi, nemo reprehenderit dolores nisi mollitia est modi! A, eius vel nostrum, ipsum, itaque minus quibusdam similique ducimus vero maiores voluptas dolore odit ratione aliquid aspernatur? Nesciunt tempore recusandae aut repudiandae nisi?</p>
-    <br />
-    <script src="/date_Cheatsheet.js"></script>
+    <!-- Detect outside/inside && fira event only once -->
+    <button id="button">Click</button>
+    <h1 id="result"></h1>
+
+    <!-- toggle Boolean Attributes -->
+    <input type="text" id="input" />
+    <button id="button2">BUtton</button>
+
+    <!-- get computed style -->
+    <div class="container"></div>
+
+    <!-- scroll elements into view -->
+    <button id="button3">Button3</button>
+    <p id="p">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
+      distinctio facilis minima suscipit aliquam perferendis commodi sequi!
+      Velit similique quaerat accusantium dolorum, nesciunt corporis delectus
+      odio quae. Necessitatibus quidem tenetur deleniti corrupti tempora quam
+      est atque suscipit nisi rem, saepe unde consequuntur enim esse vel
+      provident sequi quia illum incidunt non amet voluptas eius magni. Quisquam
+      ducimus minima illum alias cumque consequuntur praesentium perferendis
+      eius nesciunt quas dolorum debitis nostrum eligendi atque laborum iusto
+      laboriosam nulla eveniet quidem aspernatur, vel laudantium neque quos?
+      Accusantium doloribus aspernatur, quis, provident blanditiis enim, vero
+      quisquam quos labore temporibus obcaecati omnis possimus repudiandae
+      asperiores. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam
+      facilis deleniti ad placeat accusantium eius architecto neque voluptate
+      delectus, tenetur, qui temporibus. Voluptatum magni, beatae, minus
+      voluptatibus quo ullam aliquid repellendus et temporibus, saepe vel
+      molestiae porro quibusdam nam iure doloremque laboriosam possimus veniam
+      voluptas quas labore. Totam a quidem praesentium omnis dolores, deserunt
+      asperiores provident rerum exercitationem dolorem assumenda reiciendis
+      numquam molestiae error laborum minus corporis vitae voluptatem, delectus
+      ab, architecto aut! Impedit aperiam vero incidunt natus vel voluptatem id!
+      Nobis, nisi cumque. Corporis distinctio ducimus voluptatum eveniet nostrum
+      soluta harum reprehenderit tempora impedit, itaque asperiores alias
+      aspernatur saepe ad velit quo porro cumque beatae dignissimos quis
+      similique quisquam illum. Fuga recusandae officia maxime ab dolorum nam
+      dolor ut perspiciatis molestias provident voluptate autem aspernatur sit
+      ad, sed ratione accusamus eos accusantium ipsum? Tempora aliquam
+      repudiandae fugit reprehenderit voluptatibus. Reiciendis, consequatur
+      exercitationem consequuntur dolorum nihil harum quas iusto similique nulla
+      veritatis? Atque culpa nobis quia molestiae, eius quaerat aperiam optio
+      eveniet quod quas repellendus alias natus reiciendis, inventore facere
+      autem velit. Aliquam libero labore rerum. Corporis nulla recusandae harum
+      autem fuga. Consequuntur, optio aliquam laboriosam provident perspiciatis
+      harum, itaque, in commodi excepturi eos tempore ullam. Asperiores sequi
+      sint commodi blanditiis. Ut, dicta repudiandae tempora placeat nesciunt
+      cum veritatis, expedita fuga, dolorum itaque assumenda dolores quisquam
+      totam voluptates sequi amet aperiam deserunt ipsa fugiat vel sint nostrum.
+      Sed consequuntur tempore repellat quis nemo impedit consequatur harum
+      laudantium sequi. Dignissimos dolorem perspiciatis nostrum doloribus,
+      blanditiis labore corporis nemo quia modi quod fuga, atque voluptate,
+      quisquam non dicta. Ipsum, incidunt blanditiis maiores quae rem debitis
+      sed, error porro ullam cumque repellat animi sunt voluptatibus, in esse
+      molestias! Sed, id. Ipsa, ipsum quibusdam ipsam et nihil, dolor quae
+      reprehenderit quidem ratione eius molestias amet nostrum aliquid, rem cum!
+      Corrupti reprehenderit distinctio exercitationem! Incidunt aut saepe quasi
+      debitis rem quia atque deserunt laboriosam itaque necessitatibus modi hic
+      illum sunt, corporis provident? Expedita sed nesciunt esse quas recusandae
+      fugiat eveniet maiores id perferendis pariatur quaerat voluptatum
+      architecto libero, possimus voluptatem deserunt quae. Exercitationem omnis
+      delectus temporibus sunt iusto quod et corporis modi provident ad?
+      Accusamus expedita nisi labore. Officia animi sint enim ad voluptatum
+      impedit, aperiam quam neque delectus corporis facere culpa assumenda
+      debitis possimus reprehenderit ullam omnis? Ad dolorum dignissimos
+      doloribus similique excepturi velit aut quibusdam cumque, voluptas enim
+      laboriosam, asperiores in accusamus minus quos repellendus obcaecati vel
+      perferendis iste nisi ducimus culpa. Rerum quo iusto tenetur. Eos quam
+      fuga tempore exercitationem! Ducimus eveniet quas omnis, vitae repudiandae
+      recusandae rem nobis, nulla rerum doloribus voluptate obcaecati ab, est
+      dolorem? Atque totam asperiores sit? Numquam fuga doloremque consequuntur
+      error eos quaerat molestiae nobis provident, eum quae quam, illo placeat
+      architecto et unde voluptatibus accusantium, illum excepturi vitae atque
+      enim! Voluptas illum, cupiditate iste odio ullam expedita aliquid
+      perferendis assumenda eveniet cumque maxime dolorem quidem pariatur
+      nostrum possimus velit non quasi! Facilis, vitae. Temporibus laudantium
+      ipsam atque, quibusdam et doloribus amet iure enim! Natus unde, eos
+      veniam, beatae blanditiis voluptatum odio delectus nulla explicabo,
+      voluptas molestias?
+    </p>
+    <script src="/dom_tricks.js"></script>
   </body>
 </html>
