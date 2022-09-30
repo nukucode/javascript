@@ -47,6 +47,7 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 37. DOM Tricks
 38. Intl.NumberFormat
 39. Date CheatSheet
+40. Mordern Javascript
 
 ## 🔗 Links
 
