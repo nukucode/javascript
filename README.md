@@ -10,15 +10,15 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 
 ## Lessons Learned
 
-1. Day.js
-2. Week.js
-3. Clock.js
-4. Cookes.js
-5. LocalStorage.js
-6. Trim.js
-7. Math.js
-8. ImgAuto.js
-9. array.js
+01. Day.js
+02. Week.js
+03. Clock.js
+04. Cookes.js
+05. LocalStorage.js
+06. Trim.js
+07. Math.js
+08. ImgAuto.js
+09. array.js
 10. Spread Operator
 11. Rest Operator
 12. for (of)
@@ -51,6 +51,9 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 39. Date CheatSheet
 40. Mordern Javascript
 41. Operators IN Javascript
+42. sessionStorage
+43. Lexical Scoping
+44. Modren Javascript
 
 ## 🔗 Links
 
