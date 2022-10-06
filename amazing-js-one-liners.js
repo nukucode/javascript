@@ -1,49 +1,9 @@
-// check Device
-
-const checkAppleDevice = () => {
-  /Mac|iPod|iPhone|iPad/.test(navigator.platform);
-};
-
-console.log(checkAppleDevice());
-
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-) {
-  // true for mobile device
-  document.write("mobile device");
-} else {
-  // false for not mobile device
-  document.write("not mobile device");
-}
-
-/// check if tab active
+//? check if tab active
 
 const isTabActive = () => !document.hidden;
 console.log(isTabActive());
 
-/// SECTION TEXT BY USER
-
-const slectedText = () => {
-  if (window.getSelection) {
-    return window.getSelection().toString();
-  } else if (document.selection) {
-    return document.selection.createRange().text;
-  }
-  return "";
-};
-
-console.log(slectedText());
-
-function foo() {
-  const selObj = window.getSelection();
-  console.log(selObj);
-}
-
-foo();
-
-/// Append an array to another way
+//? Append an array to another way
 
 /// if your arrays are not huge, you can use the push() method of the array to which you want to add values
 
@@ -57,26 +17,57 @@ Array.prototype.push.apply(arr1, arr2);
 console.log(arr1); // arr1 will be equal to
 console.log(arr2);
 
-/// Verify that a given arguments is a number
+//? Verify that a given arguments is a number
 
 function numChecker(n) {
   return !isNaN(parseFloat(n) && isFinite(n));
 }
 console.log(numChecker(5));
 
-/// cONVERT THE ARGUMENTS OBJECT TO AN ARRAY
+//* 40+ Killer Javascript One Liners
 
-//// the boject arguments is not an array. it is similar to an array, but does not have any array properties except length
+//? => Get a random boolean
+const randomBoolean = () => Math.random() >= 0.5;
 
-//// however, it can be converted to a real array using the Array.prototype.slice
+//? Check if the provided date is a weekday or weekend
+const isWeekend = (data) => [0, 6].indexOf(data.getDay()) !== -1;
 
-function myFunction(arguments) {
-  return Array.prototype.slice.call(arguments);
-}
+//? Check if a number is even or odd
+const isEven = (num) => num % 2 === 0;
 
-const obj = {
-  name: "Ankit",
-  age: 18,
-  WORK: "SOFTWARE ENGINEER",
-};
-console.log(myFunction(obj));
+//? Remove all duplicate values in an array
+const arr = (arr) => [...new Set(arr)];
+
+//? Check if a variable is an array
+const isArray = (arr) => Array.isArray(arr);
+
+//? Generate a random number between two numbers
+const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+//? Generate a random string (unique id?)
+const randomString = () => Math.random().toString(36).slice(2);
+
+//? Swapping Two Variables || Destructuring
+let b = "a";
+let a = "b";
+
+[b, a] = [a, b];
+
+//? Calculate number of days between two dates
+const daysDiff = (date, date2) => Math.ceil(Math.abs(date - date2) / 86400000);
+
+//? Different ways of merging multiple arrays
+const array1 = [1, 2, 3, 4, 5, 6, 7];
+const array2 = [8, 9, 10, 12, 3, 4, 5, 6];
+
+const merge = (a, b) => array1.concat(array2);
+//or
+const merge2 = (a, b) => [...a, ...b];
+// or and remove the duplication
+const merge3 = [...new Set(a.concat(b))];
+// or
+const merge4 = [...new Set([...a], ...b)];
+
+//? Get the actual type of Js primitives
+const trueType = (obj) =>
+  Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
