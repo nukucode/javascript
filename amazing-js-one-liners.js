@@ -71,3 +71,37 @@ const merge4 = [...new Set([...a], ...b)];
 //? Get the actual type of Js primitives
 const trueType = (obj) =>
   Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
+
+//? Truncate
+
+//! String at the end
+const truncate1 = (str, num) => {
+  return str.length < num ? str : str.slice(0, num - 3) + "...";
+};
+
+//! string from the middle
+const truncateStringMiddle = (str, num, start, end) => {
+  return `${str.slice(0, start)}...${str.slice(str.length - end)}`;
+};
+
+//! a number to a fixed decimal point
+const toFixed = (n, fixed) =>
+  ~((Math.pow(10, fixed) * n) / Math.pow(10, fixed));
+
+//? Capitalizing a string
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+console.log(capitalize("rogers"));
+
+//? Chech if the current tab is in view/focus
+const isTabView = () => document.hidden;
+//or
+document.hidden ? "hidden" : "visible";
+
+//? Revers a string
+
+const reverse = (str) => str.split("").reverse().join("");
+// or
+const reverse2 = (str) => [...str].reverse().join``;
+
+
