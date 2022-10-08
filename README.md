@@ -9,6 +9,7 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 - [@therogersak](https://www.github.com/therogersak)
 
 ## Lessons Learned
+<<<<<<< HEAD
 - [1. Arrays](https://github.com/therogersak/full-stack-javascript/tree/main/Arrays)
 - [1. Strings](https://github.com/therogersak/full-stack-javascript/tree/main/strings)
 - [1. Classes](https://github.com/therogersak/full-stack-javascript/tree/main/classes)
