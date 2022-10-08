@@ -1,6 +1,6 @@
-// spread oprator in depth
+//: spread oprator in depth
 
-// in es6 the three dots operator means two things
+//* in es6 the three dots operator means two things
 
 // 1. spread operator
 // 2. rest operator
@@ -79,3 +79,4 @@ const team = Object.assign({}, details, stats);
 // new method
 
 const team1 = { ...details, ...stats };
+
