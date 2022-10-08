@@ -2,7 +2,6 @@
 
 A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 
-## Lessons
 
 - [01. Variables](https://github.com/therogersak/full-stack-javascript/tree/main/Variables)
 - [02. Syntax](https://github.com/therogersak/full-stack-javascript/tree/main/Syntax)
