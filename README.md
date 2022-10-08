@@ -9,17 +9,17 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 - [@therogersak](https://www.github.com/therogersak)
 
 ## Lessons Learned
-<<<<<<< HEAD
+
 - [1. Arrays](https://github.com/therogersak/full-stack-javascript/tree/main/Arrays)
-- [1. Strings](https://github.com/therogersak/full-stack-javascript/tree/main/strings)
-- [1. Classes](https://github.com/therogersak/full-stack-javascript/tree/main/classes)
-- [1. Number](https://github.com/therogersak/full-stack-javascript/tree/main/number)
-- [1. Others](https://github.com/therogersak/full-stack-javascript/tree/main/others)
-- [1. Syntax](https://github.com/therogersak/full-stack-javascript/tree/main/syntax)
+- [2. Strings](https://github.com/therogersak/full-stack-javascript/tree/main/strings)
+- [3. Classes](https://github.com/therogersak/full-stack-javascript/tree/main/classes)
+- [4. Number](https://github.com/therogersak/full-stack-javascript/tree/main/number)
+- [5. Others](https://github.com/therogersak/full-stack-javascript/tree/main/others)
+- [6. Syntax](https://github.com/therogersak/full-stack-javascript/tree/main/syntax)
 
 
 ## 🔗 Links
-
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](therogersak.vercel.app)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/therogersak)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/therogersak)
 
