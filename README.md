@@ -2,7 +2,7 @@
 
 A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 
-![App Screenshot](https://github.com/therogersak/full-stack-javascript/blob/main/thumnail.png?raw=true)
+![App Screenshot](https://github.com/therogersak/full-stack-javascript/blob/main/knowledge-map%20(1).png?raw=true)
 
 ## Authors
 
