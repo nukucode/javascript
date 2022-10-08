@@ -9,7 +9,7 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 - [@therogersak](https://www.github.com/therogersak)
 
 ## Lessons Learned
-[arrays](- Arrays)
+- [1. Arrays](#arrays)
 01. Day.js
 02. Week.js
 03. Clock.js
