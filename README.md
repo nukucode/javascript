@@ -11,11 +11,12 @@ A Javascript Master Course For Devlopers And Code Snipets Without Any Cost
 ## Lessons Learned
 
 - [1. Arrays](https://github.com/therogersak/full-stack-javascript/tree/main/Arrays)
-- [2. Strings](https://github.com/therogersak/full-stack-javascript/tree/main/strings)
+- [2. Strings](https://github.com/therogersak/full-stack-javascript/tree/main/Strings)
 - [3. Classes](https://github.com/therogersak/full-stack-javascript/tree/main/classes)
-- [4. Number](https://github.com/therogersak/full-stack-javascript/tree/main/number)
-- [5. Others](https://github.com/therogersak/full-stack-javascript/tree/main/others)
-- [6. Syntax](https://github.com/therogersak/full-stack-javascript/tree/main/syntax)
+- [4. Operators](https://github.com/therogersak/full-stack-javascript/tree/main/Operators)
+- [5. Number](https://github.com/therogersak/full-stack-javascript/tree/main/Number)
+- [6. Others](https://github.com/therogersak/full-stack-javascript/tree/main/Others)
+- [7. Syntax](https://github.com/therogersak/full-stack-javascript/tree/main/Syntax)
 
 
 ## 🔗 Links
