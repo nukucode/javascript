@@ -27,6 +27,3 @@ const coutdown = () => {
 
 coutdown();
 setInterval(coutdown, 1000);
-
-const pop = new Date().getTime();
-console.log(pop);

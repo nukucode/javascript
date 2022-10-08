@@ -1,5 +1,5 @@
-// the javascript math object allow to perform mathematical task on numbers.
-// the math object is static.
+//: the javascript math object allow to perform mathematical task on numbers.
+//* the math object is static.
 
 //   1. Math Property (Constans)
 //  the syntax of any math property is (math.property)
