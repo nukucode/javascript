@@ -1,6 +1,6 @@
-//* Hoisting IN Javascript
+//: Hoisting IN Javascript
 
-// -> Javascript compiler moves variables and function declaration to the top called hoisting
+//* ==> Javascript compiler moves variables and function declaration to the top called hoisting
 
 alert = "hi i am declared later";
 console.log(alert);

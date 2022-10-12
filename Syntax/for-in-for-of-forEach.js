@@ -1,6 +1,6 @@
 /// ----> for in
 
-const array = [1,2,3,4,5,6,7,8];
+const array = [1, 2, 3, 4, 5, 6, 7, 8];
 
 for (let prop in ["1", "b", "c", "d"]) {
   console.log(prop); // 0,1,2,3 array indexes
@@ -28,14 +28,12 @@ for (let val of { a: 1, b: 2, c: 3 }) console.log(prop); // TypeError (not itera
 
 for (let val of new Set(["a", "b", "a", "d"])) console.log(val); // a, b, d (Set values)
 
-
-
 ////// ----> for each
 
-['a', 'b', 'c'].forEach(
-    val => console.log(val)     // a, b, c (array values)
-  );
-  
-  ['a', 'b', 'c'].forEach(
-    (val, i) => console.log(i)  // 0, 1, 2 (array indexes)
-  );
+["a", "b", "c"].forEach(
+  (val) => console.log(val) // a, b, c (array values)
+);
+
+["a", "b", "c"].forEach(
+  (val, i) => console.log(i) // 0, 1, 2 (array indexes)
+);

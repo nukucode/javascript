@@ -1,4 +1,4 @@
-//? Array Method In Javascript
+//: Array Method In Javascript
 
 //* 1.concat()
 //* 2.indexof()
@@ -10,10 +10,11 @@
 //* 8.unshift()
 //* 9.shift()
 //* 10.slice()
-//* 11.sort()
-//* 12.splice()
-//* 13.toString()
-//* 14.valueOf()
+//* 11.splice()
+//* 12.toString()
+//* 13.valueOf()
+//* 14.some()
+//* 15.sort()
 
 //! contact method
 
@@ -190,14 +191,6 @@ console.log(gods);
 //     'Hanuman Ji'
 //   ]
 
-//! sort()
-
-// the sort() method sorts an array alphabetically
-
-const abc = ["c", "d", "e", "f", "a", "b"];
-
-console.log(abc.sort()); // [ 'a', 'b', 'c', 'd', 'e', 'f' ]
-
 //! slice
 
 // the slice() method returns selected elements in an Array, as a new array
@@ -259,13 +252,51 @@ console.log(browers.reverse()); //[ 'Safari', 'FireFox', 'Edge', 'IE', 'Chrome' 
 
 console.log(browers.toString()); //Safari,FireFox,Edge,IE,Chrome
 
-
 //! valueOf()
 
 // the valueOf method returns the array itself
 
 // the valueOf() method does not change the original array.
 
-const values =  browers.valueOf();
+const values = browers.valueOf();
 
-console.log(values) // [ 'Safari', 'FireFox', 'Edge', 'IE', 'Chrome' ]
+console.log(values); // [ 'Safari', 'FireFox', 'Edge', 'IE', 'Chrome' ]
+
+//! Some()
+
+// the some method tests whether any of the array elements pass the given test function
+
+//* syntax
+// arr1.some(callback(currentValue), thisArg)
+
+// the some() method can take two parameters:
+/*
+==> Callback - the function to test for each array element. it take in:
+==> currentValue - the current element being passed from the array.
+==> thisArg (optional) -> value to use as this when executing callback. by default, it is undefined. 
+*/
+
+function checkAges(age) {
+  return age > 18;
+}
+
+const age = [12, 13, 14, 15, 16, 19];
+
+console.log(age.some(checkAges));
+
+//! sort()
+
+// the sort() method sorts the items of an array in a specific order (ascending or descending)
+
+//* syntax
+// arr.sort(compareFunction)
+
+// the sort method takes in:
+//# ==> compareFunction (optinal) - it is used to define a custom sort order.
+
+const alpha = ["a", "c", "d", "b"];
+console.log(alpha.sort()); // [ 'a', 'b', 'c', 'd' ]
+
+const priceList = [2, 3, 4, 5, 10, 15];
+console.log(priceList.sort()); // [ 10, 15, 2, 3, 4, 5 ]
+// Number is converted to string and sorted
