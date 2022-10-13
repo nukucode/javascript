@@ -1,75 +1,92 @@
-// ?  Avoid Delete Keyword
+//: 65+ JAVASCRIPT CODE SNIPPETS WITH EXPLANATIONS
 
-// ! Don't use 'delete' to removes a property from an object
+//# Avoid the "delete" keyword
 
-const rogers = {
-  age: 18,
-  handle: "therogersak",
+const person = {
+  name: "therogersak",
+  age: "18",
 };
 
-delete rogers.handle;
+delete person.age;
+console.log(person); // { name: 'therogersak' }
 
-console.log(rogers);
-// {age: 18}
+// do this
 
-// * instead, use the rest operator to create a new copy without the given property
-
-const rogers2 = {
-  age: 18,
-  handle: "therogersak",
+const person2 = {
+  name: "Chris",
+  age: 40,
 };
 
-const { age, ...newRogers } = rogers;
-console.log(newRogers);
-// {handle: 'therogersak'}
+const { age, ...newPerson2 } = person2;
+console.log(newPerson2); // { name: 'Chris' }
 
-// * Explanation
+/* Don't use delete to remove a property from an object.
+This mutates the original object and can lead to unpredictable behavior which becomes difficult to debug.
 
-/// Don't use delete to remove a property from a object. This mutates the original object and can lead to unpredictable behavior which becomes difficut to debug
+Instead, use the rest operator to create a new copy without given property*/
 
-/// Instead, use the rest operator to create a new copy without the given property
+//# Using a Falsy Bouncer
 
-// ? Using A Falsy Brouncer
-
-const evenNumberSquared = [1, 2, 3, 4]
+const evenNumbersSquared = [1, 2, 3, 4, 5, 6]
   .map((n) => {
     if (n % 2 !== 0) {
       return null;
     }
 
-    return n * 2;
+    return n * n;
   })
   .filter(Boolean);
 
-console.log(evenNumberSquared);
-// * Filter all falsy values:
-// [null,4,null,16]
+console.log(evenNumbersSquared); // [ 4, 16, 36 ]
 
-// *Explanation
-// When passing the 'Boolean' constructor directly to Array.filter as the first arguments, it serve as a falsy bouncer
+/* When passing the "Boolean" constructor directly to Array.filter as the first argument, it serves as a falsy bouncer.
 
-// * This will filter all values that qualifies as falsy;
-// ! that is false, null, undfined, 0, NaN, and ""(empty string)
+This will filer all values that qualifies as falsy;
+That is false, null, undefined, 0, NaN, and ""(empty string)
+*/
 
-// ? Object Destructuring On Arrays
+//# Object Destructuring on arrays
 
-const names = [
-  "Ankit Yadav",
-  "Manish Yadav",
-  "Rahul Yadav",
-  "Abishek Yadav",
-  "Rohit Yadav",
-  "Shubham Yadav",
-  "Abijeet Yadav",
-];
+const lords = ["Shiva", "Vishnu", "Hanuman", "Ganesh"];
 
-const { 0: ak, 1: mk, 3: ab } = names;
+const { 0: s, 1: v, 2: h, 3: g } = lords;
 
-console.log(ak); // Ankit Yadav
-console.log(mk); // Manish Yadav
-console.log(ab); // Abishek Yadav
+console.log(s, v, h, g); // Shiva Vishnu Hanuman Ganesh
 
-// *Explanation
-// You can destructuring elements from an array using the same syntax as when destructuring for objects.
-// The Property name corresponds to the index of the element in the array.
-// It's conevnient way to pull out specific elements from an array in a single clean line of code
+/* You can destructure elements from an array using the same syntax as when destructuring for objects.
+
+The property name corresponds to the index of the element in the array.
+
+It's a convenient way to pull out specific elements from  an array in  a single clean line of code.
+*/
+
+//# Skip elements with Array Destructuring
+
+const number = [1, 2, 3, 4, 5];
+
+const [, , ...newNum] = number;
+console.log(newNum); // [3,4,5]
+
+/* You can use an Empty 'placeholder' comma to skip elements when destructuring arrays.
+
+If you want to access the second or third from a list, or want to skip the first or second element (etc), this is a great and clean way to do it.
+ */
+
+//# Replacer function with JSON.stringFY
+
+const foo = {
+  bar: 40,
+  baz: "qux",
+};
+
+const replacer = (key, value) => (key === "bar" ? value * 2 : value);
+
+const fooStr = JSON.stringify(foo, replacer);
+console.log(fooStr); // {"bar":80,"baz":"qux"}
+
+/* The replacer function is the second argument to JSON.stringfy.
+I alters the behavior of the stringfication process.
+
+The argument can also be an array or type String or Number.
+This becomes an "allowlist" that filters the properties of the object with the name included in the list
+*/
