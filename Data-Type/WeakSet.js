@@ -9,7 +9,7 @@
 //# Weak Collections
 
 /* 
-=> Map and Set's references to objects are strongly आयोजित and will not allow for garbage collection
+=> Map and Set's references to objects are strongly held and will not allow for garbage collection
 
 => WeakMap and WeakSet ES6 collection are "weak" because they allow for objects which are no longer needed to
 cleared from memory
