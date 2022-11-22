@@ -317,3 +317,44 @@ console.log(hasActiveUser);
 /* Instead of using Array.find, or manually searching a list for an occurrence, use the array method Array.some instead.
 
 It's built for exactly that purpose*/
+
+//: Using Optional Chaininig On Fnctions
+
+// Using short-circuit
+someFunction && someFunction();
+
+// Using if-statement
+if (someFunction) {
+  someFunction();
+}
+
+//* But Now
+someFunction?.();
+
+/* The Optional Chaining operator (?.) enables you to access properties that are potentially null or undefined.
+
+It works perfectly well on function calls as well.
+
+A great example of usage is in React, where function passed as props may be optional (and therefor potentially undefined).*/
+
+//: Enforce required arguments using default assignment
+
+//* Create this reusable function
+
+const isRequired = () => {
+  throw Error("Argument is missing");
+};
+
+//* Example Usage
+
+const setUsername = (username = isRequired()) => {
+  // Do something with "username",
+  // If username not provided.
+  // these lines of code will naver be reached
+};
+
+/* The idea here is to make a default assignment to the return-value of a function which throws an error when getting invoked.
+
+In this way, an error will be thrown when am argument in not passed.
+
+Be aware, that null is considered a value, hence passing null will not result in a default assignment*/
