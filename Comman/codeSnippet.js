@@ -232,14 +232,14 @@ In other words, set will automatically remove duplicates for use, and by spreadi
 
 //: Use Modules instead of Classes
 
-class someClass {
+class SomeClass {
   methodOne() {}
   methodTwo() {}
 }
 
 // Usage
 
-const someClass = new someClass();
+const someClass = new SomeClass();
 someClass.methodOne();
 
 //* Use this
@@ -358,3 +358,316 @@ const setUsername = (username = isRequired()) => {
 In this way, an error will be thrown when am argument in not passed.
 
 Be aware, that null is considered a value, hence passing null will not result in a default assignment*/
+
+//: Adding a leading Zero
+
+const d = new Date();
+
+const day = `0${d.getDate()}`.slice(-2);
+// 04 or 15
+
+/*  Use this one-liner to add leading zeros to numbers.
+    (very useful for dates).
+    
+    Alternatively,you can use padStart(2,0)*/
+
+//: Avoid DEFAULT EXPORTS
+
+/* => Poor discoverability and autocompletion
+   => Horrible when using CommonJS.
+   => TypeScript struggles with auto-import
+   => Re-exporting becomes tedious.
+   
+   Generally, i always recommend simple exports + destructured import.*/
+
+//: Use The Spread Operator - To Shallow Copy Objects and Arrays.
+
+const newObject = {};
+Object.keys(oldObject).forEach((key) => {
+  newObject[key] = oldObject[key];
+});
+
+const newArray = [];
+oldArray.forEach((arr) => {
+  newArray.push(arr);
+});
+
+//* Use like this =>
+
+const newObject2 = { ...oldObject };
+const newArray2 = [...oldArray];
+
+/* Use the spread operator to create shallow copies of object and arrays. It's way cleaner than iterating and manually coping over.
+
+The spread operator was a feature added as a part of ES6 and is supported by major browsers.*/
+
+//: Destructure Into Existing Variables
+
+const about = {
+  username: "thergersak",
+  email: "therogersak@gmail.com",
+};
+
+let username;
+let email;
+
+({ username, email } = about);
+
+/* There's an easy way to destructure into existing variables.
+
+Simply wrap the destructuring syntax in parentheses - this will result in the destructured variables being assinged as variables in current scope.
+
+Combining this with the use of the let keyword can be very useful in certain cases.*/
+
+//: Lock An Object Using Object Freeze
+
+const aboutUser = {
+  username: "therogersak",
+};
+
+Object.freeze(aboutUser);
+
+aboutUser.username = "FakeUser";
+// Throws an error in strict mode.
+
+/* The Object.freeze method freezes an object. 
+A frozen object can no longer be changed and will result in an error. This means, that no properties can be reassigned or delete from the object. */
+
+//: Create a Custom Promise Using the Async Keyword
+
+const promise = async () => {
+  return "Jai Shree Ram";
+};
+
+promise().then((result) => {
+  console.log(result); // "Jai Shree Ram"
+});
+
+/* You probably already knew that you have to put ‘async’ in front of the function signature in order to use ‘await’ inside of it. But did you also know that ‘async’ turns the function into a promise? When adding ‘async’ in from on the function signature, the return value automatically becomes ‘awaitable’ or ‘thenable’. */
+
+//: Creating A Reusable Pipe Using JavaScript
+
+const pipe =
+  (...fns) =>
+  (arg) =>
+    fns.reduce((value, fn) => fn(value), arg);
+
+const calculaterProfit = pipe(
+  // DEDUCT VAT (8%)
+  (value) => value * (1 - 0.08),
+
+  // DEDUCT tax (15%)
+  (value) => value * 1.015,
+
+  // Add External contrubution
+  (value) => value + 2500,
+
+  // Split with co-founders (3 c-founders)
+  (value) => value / 3
+);
+
+const revenue = 5e4;
+
+const profit = calculaterProfit(revenue);
+
+/* This is an Example of how you can create a reusable and composable pipe using JavaScript.
+
+The data of the pipe flows left to right, calling each function with the output of the last one.
+
+It's great and clean way to simplify a flow of processing a alue through multiple steps. */
+
+//: STOP USING IIFEs (Immediately Invoked Function Expression)
+
+(async function doSomeThingAsync() {
+  const foo = await bar();
+  const baz = foo.qux;
+
+  return baz;
+})();
+
+//* Use like this
+
+async function doSomeThingAsync2() {
+  const foo = await bar();
+  const baz = foo.qux;
+
+  return baz;
+}
+
+doSomeThingAsync2();
+
+/* IIFEs died when modules were born.
+
+You don't need them (at least in 99% in the cases, you don't).
+
+In a case like this, just execute the function on a new line instead
+   */
+
+//: UNDERSTANDING CLOSURES
+
+// We can define a nested inner function which gets returned by an outer function.
+
+const outer = () => {
+  let n = 42;
+
+  const inner = () => {
+    // inner can access "n"
+    console.log(n);
+  };
+
+  return inner;
+};
+
+//? The inner function still has access to n, even through it's called from another context.
+
+const inner = outer();
+inner();
+
+/* Closures is one of the fundemental building-blocks in JavaScript.
+
+A closures gives a function access to an outer function's scope, even if the inner function in invoked from a completely different context.
+
+This pattern is often used in combination with currying.*/
+
+//: Scroll To A Specific Element (with a smooth scrolling animation)
+
+const element = document.getElementById("element");
+
+element.scrollIntoView({
+  behavior: "smooth",
+});
+
+/* Calling Element.scrollIntoView causes the elements parent container to scroll, such that the element becomes visible to the user.
+
+It's really easy way to invoked a smooth scrolling behavior.*/
+
+//: Avoid unnecessary asyn-await
+
+const fetchUser = async () => {
+  return await fetch("https://endpoint.com");
+};
+
+//* Right
+
+const fetchUser2 = () => {
+  return fetch("https://endpoint.com");
+};
+
+// The Result is the same!
+
+const user = await fetchUser();
+const userObj = await user.json();
+
+/* If the function returns a Promise directly, there's no need to await it. */
+
+//: Use Proper Variables Names (Also in callbacks)
+
+const profileWithImages = user.filter((u) => {
+  return u.entities.find((e) => e.type === "profile_image");
+});
+
+//* Right
+
+const profileWithImages2 = user.filter((user) => {
+  return user.entities.find((entity) => entity.type === "profile_img");
+});
+
+/* Use proper variable names - also in callbacks.
+
+Short, concise code is not necessarily an ideal.
+Clarity and readablity is.
+
+Playing with an extra line perfecly ok.*/
+
+//: Use Object.entries (to access both ket and value)
+
+Object.entries(someObj).forEach((key, value) => {
+  console.log(key, value);
+});
+
+/* You can use Object.entries() to iterate through the properties of an object and access both key and value.
+
+No need to do an object lookup for each iteration.*/
+
+//: Using curly braces with switch-statements
+
+switch (foobar) {
+  case "foo": {
+    console.log("foo");
+    break;
+  }
+
+  case "qux": {
+    console.log("QUX");
+    break;
+  }
+}
+
+/* Did yoy know that you can curly braces with swithc-statement?
+
+Takeaways include:
+1.More readable
+2.Establishes their own block scope.
+*/
+
+//: Create Your Own Custom HTML Elements
+
+class FooElement extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = "This is custom element";
+  }
+}
+
+customElements.define("foo-element", FooElement);
+
+/* Did you know that you can create your own custom HTML elements using JavaScript - and then use them in your HTML file just like any other element?.
+
+You can create some pretty powerful experiences using this technique.*/
+
+//: Using The Nullish Coalescing Operator
+
+let price_1 = 0;
+let price_2;
+
+// Assign a default if "price" is not set
+
+const defaultPrice_1 = price_1 ?? 10;
+const defaultPrice_2 = price_2 ?? 50;
+
+console.log(defaultPrice_1); // 0
+console.log(defaultPrice_2); // 50
+
+/* The Nullish coalescing operator will return its right-hand operator when the left side in null or undefined. Not Just falsy
+
+When working with numbers, this is typically very useful.*/
+
+//: 3 Ways to fill an array
+
+const arr = new Array(10).fill("foo");
+
+//* 2st
+
+const arr2 = new Array(10);
+const filledArr = [...arr2].map(() => "foo");
+
+//* 3st
+
+const arr3 = Array.from({ length: 10 }, () => "foo");
+
+/* These are 3 different ways to fill an array using JavaScript.
+The most commonly used is version 1 - yet, version 2 can useful when filling
+the array best on business logic.
+Version 3 is mostly for fun - but it can actually be done this way as well. */
+
+//: 3 Options You can pass to AddEventListener
+
+element.addEventListener("click", callback, {
+  capture: false,
+  once: true,
+  passive: false,
+});
+
+/* capture: Will use “capturing” instead of “bubbling”.
+once: If true, the event will be removed after running once.
+passive: If true, the function will never call preventDefault(), even if it’s included in the
+callback function. */
