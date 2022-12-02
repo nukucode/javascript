@@ -671,3 +671,31 @@ element.addEventListener("click", callback, {
 once: If true, the event will be removed after running once.
 passive: If true, the function will never call preventDefault(), even if it’s included in the
 callback function. */
+
+//: How to hide all elements specified?
+
+const hide = (...ele) => [...ele].forEach((el) => (el.style.dispaly = "none"));
+
+hide(document.querySelectorAll("p"));
+// Hides all <p> elements on the page
+
+//: How to check if the element has the specified class?
+
+const hasClass = (el, className) => el.classList.contain(className);
+
+hasClass(document.querySelector("p.special"), "special");
+
+//: How to toggle a class for an element?
+
+const toggleClass = (el, className) => el.classList.toggle(className);
+
+toggleClass(document.querySelector("p.special", "special"));
+
+//: How to get the scroll position of the current page?
+
+const getScrollPosition = (el = window) => ({
+  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop,
+});
+
+getScrollPosition(); // {x:0 , y:300}
