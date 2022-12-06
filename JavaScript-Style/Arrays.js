@@ -6,7 +6,7 @@ const items = new Array();
 // good
 const items2 = [];
 
-//: Use Array#push instead of direct assignment to add items to an array.
+//: Use Array#push instead of direct assignment to add items to an array. 
 
 const someStack = [];
 
