@@ -1,8 +1,8 @@
 //: Map IN Javascript
 
 /* 
+Arrays are used for storing ordered collections. 
    Object are Used for storing keyed collections.
-   Arrays are used for storing ordered collections. 
 */
 
 //# Map
@@ -157,8 +157,8 @@ There's Object.fromEntries methods that does the revers: given an array of [key,
 */
 
 let prices = Object.fromEntries([
-  ["banana", 1],
   ["orange", 2],
+  ["banana", 1],
   ["mango", 4],
 ]);
 

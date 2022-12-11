@@ -106,4 +106,132 @@ function createMicrobrewery2(name = "Hipster Brew Co.") {
   const breweryName = name;
 }
 
+//* Functions
+
+/* => 1.Function arguments (2 or fewer ideally) */
+
+//! BAD:
+function createMenu(title, body, buttonText, cancellable) {
+  //...
+}
+
+createMenu("foo", "bar", "baz", true);
+
+//? GOOD:
+function createMenu2({ title, body, buttonText, cancellable }) {
+  //...
+}
+
+createMenu2({
+  titie: "foo",
+  body: "bar",
+  buttonText: "Baz",
+  cancellable: true,
+});
+
+/* => 2.Functions should do one thing.
+
+This is by far the most important rule in software engineering. When functions do more than one thing, they are harder to compose, test, and reason about. When you can isolate a function to just one action, it can be refactored easily and your code will read much cleaner. If you take nothing else away from this guide other than this, you'll be ahead of many developers.*/
+
+//! BAD:
+function emailClients(clients) {
+  clients.forEach((client) => {
+    const clientRecord = data.lookup(client);
+    if (clientRecord.isActive()) {
+      email(client);
+    }
+  });
+}
+
+//? GOOD:
+function emailActiveClients(clients) {
+  clients.filter(isActive).forEach(email);
+}
+
+function isActiveClient(client) {
+  const clientRecord = database.lookup(email);
+  return clientRecord.isActive();
+}
+
+/* => 3.Function names should say what they do */
+
+//! BAD:
+function addToDate(data, monthe) {
+  //...
+}
+
+const date = new Date();
+
+// It's hard to tell from the funtion name what is added
+addToDate(date, 1);
+
+//? GOOD:
+function addMonthToDate(month, date) {
+  ///...
+}
+
+const date2 = new Date();
+addMonthToDate(1, date2);
+
+/* => 4.Function should only be one level of abstraction.
+
+When you have more than one level of abstraction your function is usually doing too much. Splitting up function leads to reusability and easier testing.*/
+
+//! BAD:
+function parseBetterJSAlternative(code) {
+  const REGEXES = [
+    // ...
+  ];
+
+  const statements = code.split(" ");
+  const tokens = [];
+  REGEXES.forEach((REGEX) => {
+    statements.forEach((statement) => {
+      // ...
+    });
+  });
+
+  const ast = [];
+  tokens.forEach((token) => {
+    // lex...
+  });
+
+  ast.forEach((node) => {
+    // parse...
+  });
+}
+
+//? GOOD:
+function parseBetterJSAlternative(code) {
+  const tokens = tokenize(code);
+  const syntaxTree = parse(tokens);
+  syntaxTree.forEach((node) => {
+    // parse...
+  });
+}
+
+function tokenize(code) {
+  const REGEXES = [
+    // ...
+  ];
+
+  const statements = code.split(" ");
+  const tokens = [];
+  REGEXES.forEach((REGEX) => {
+    statements.forEach((statement) => {
+      tokens.push(/* ... */);
+    });
+  });
+
+  return tokens;
+}
+
+function parse(tokens) {
+  const syntaxTree = [];
+  tokens.forEach((token) => {
+    syntaxTree.push(/* ... */);
+  });
+
+  return syntaxTree;
+}
 

@@ -46,7 +46,7 @@ console.log(string.replace("Hello", "New")); // "New World"
 
 //* string.slice()
 
-// the "slice" string method in js expracts a part of the string and return it as a new string
+// the "slice" string method in js extracts a part of the string and return it as a new string
 
 console.log(string.slice(1, 3)); // "el"
 
