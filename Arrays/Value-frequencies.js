@@ -12,4 +12,5 @@ const frequencies = (arr) =>
   }, {});
 
 // { a: 3, b: 2, c: 1 }
-console.log(frequencies([1, 2, 1, 2, 3]));
+console.log(frequencies(["a", "a", "b", "a", "b", "c"]));
+      
