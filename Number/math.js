@@ -22,7 +22,7 @@
 
 /*
  1. abs(x)  - return the absolute value of x
- 2. floor(x) - return x, rounded downwards to the nearest interfer
+ 2. floor(x) - return x, rounded downwards to the nearest interger
  3. random() - return a random number between 0,1
  4. round(x) - return x to the nearest integer */
 
