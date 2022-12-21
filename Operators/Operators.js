@@ -22,6 +22,8 @@
 // ** EXPONENTIATION (ES72016)
 // / DIVISION
 // % MODULUS (REMAINDER)
+let number = 15;
+console.log(number % 2);    // => 1
 // ++ INCREMENT
 // -- DECREMENT
 
