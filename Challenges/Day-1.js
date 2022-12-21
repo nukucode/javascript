@@ -1,3 +1,5 @@
+console.log("==> DAY-1 CHALLENGES <==");
+
 //: 1. Defaul function parameter & function length property.
 
 function foo(a, b = 10, c) {
@@ -36,4 +38,6 @@ console.log(obj.name);
 //: Array.map & parseInt.
 
 const numbers = ["1", "2", "3", "4", "5"].map(parseInt);
-console.log(numbers)
+console.log(numbers);
+
+console.log("==> DAY-1 CHALLENGES <==");

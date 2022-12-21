@@ -1,4 +1,6 @@
-// Print all even numbers from 0 - 10 =>
+console.log("==> DAY-2 CHALLENGES <==");
+
+//: Print all even numbers from 0 - 10 =>
 
 const printEvenNumbers = () => {
   for (let i = 0; i <= 10; i++) {
@@ -12,7 +14,7 @@ const printEvenNumbers = () => {
 
 printEvenNumbers();
 
-// Print a table containing multiplication tables =>
+//: Print a table containing multiplication tables =>
 
 const multiplicationTable = (value = 2) => {
   for (let i = 0; i <= 10; i++) {
@@ -21,7 +23,7 @@ const multiplicationTable = (value = 2) => {
 };
 console.log(multiplicationTable());
 
-// create a lenght converter function =>
+//: create a lenght converter function =>
 
 function lengthConvertor(type, value) {
   if (type === "meter") {
@@ -47,7 +49,7 @@ function lengthConvertor(type, value) {
 
 console.log(lengthConvertor("kilometer", 5281));
 
-// Calculate the sum of numbers within an array =>
+//: Calculate the sum of numbers within an array =>
 
 const arr = [1, 2, 3, 4, 5];
 const sum = arr.reduce((acc, value) => acc + value);
@@ -63,12 +65,12 @@ const sum2 = () => {
 
 console.log(sum2());
 
-// Create a function that reverse an array =>
+//: Create a function that reverse an array =>
 
 let reversed = arr.reverse();
 console.log(reversed);
 
-// Sort an array from lowest to highest
+//: Sort an array from lowest to highest
 
 const anotherArray = [100, 100, 200, 300, 400];
 const sorted = anotherArray.sort((a, b) => b - a);
@@ -93,7 +95,7 @@ const removeSpace = (str) => {
 };
 console.log(removeSpace(str));
 
-// Return a Boolean if a number is divisible by 10
+//: Return a Boolean if a number is divisible by 10
 
 const booleanValue = (number) => {
   return number % 10 === 0 ? true : false;
@@ -101,8 +103,11 @@ const booleanValue = (number) => {
 
 console.log(booleanValue(100));
 
-// Return the number of vowels in the string
+//: Return the number of vowels in the string
 
 const vowels = (str) => str.match(/[aeiou]/gi);
 
 console.log(vowels("I love JavaScript"));
+
+
+console.log("==> DAY-2 CHALLENGES <==");
