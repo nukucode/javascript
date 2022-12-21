@@ -52,7 +52,7 @@ const prom1 = new Promise((resolved, reject) => {
 
 const prom2 = new Promise((resolved, reject) => {
   setTimeout(() => {
-    reject("Promise2 Resolved");
+    reject("Promise2 Reject");
   }, 1000);
 });
 
