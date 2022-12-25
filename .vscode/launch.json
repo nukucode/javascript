@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    
+    {
+      "name": "Debug currentFile",
+      "program": "${file}",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ]
+}
