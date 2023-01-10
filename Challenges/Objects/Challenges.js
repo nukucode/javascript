@@ -310,3 +310,177 @@ const readOnlyObj = new Proxy(obj, {
   },
 });
 
+//: Deep object copy
+
+const person = {
+  name: "John",
+  age: 18,
+  skills: ["Java", "HTML"],
+};
+
+const copiedObj = JSON.parse(JSON.stringify(person));
+
+console.log(person.skills === copiedObj.skills); // false
+
+//: Write a program which can return a boolean if value is present in the range given start and end values in an object.
+
+let range = {
+  start: 10,
+  end: 20,
+};
+
+const rangeFinder = new Proxy(range, {
+  has(target, value) {
+    return value >= target.start && value <= target.end;
+  },
+});
+
+//: Write a function which accepts a topic and a list of related tags to store information. The same function should return all the topic when requested with a tagname
+
+function TagManager() {
+  const map = new Map();
+
+  function addTags(topic, tagText) {
+    const tagsArr = tagText.split(",").map((tag) => tag.trim());
+
+    tagsArr.forEach((tag) => {
+      if (map.has(tag)) {
+        map.get(tag).push(topic);
+      } else {
+        map.set(tag, [topic]);
+      }
+    });
+  }
+
+  function getTopics(tag) {
+    return map.get(tag);
+  }
+
+  return {
+    addTags,
+    getTopics,
+  };
+}
+
+// Example
+const tagManager = TagManager();
+tagManager.addTags("React", "Redux, JSX, JavaScript, VDOM");
+tagManager.addTags("Angular", "RxJS, TypeScript, JavaScript");
+tagManager.addTags("Vue", "VDOM, JavaScript");
+
+tagManager.getTopics.getTopics("VDOM"); // React, Vue
+tagManager.getTopics.getTopics("JavaScript"); // React, Angular, Vue
+
+//: Write a function which accepts a collection of values & an iteratee as arguments and returns a grouped object
+
+function groupBy(values, iteratee) {
+  const obj = {};
+  for (let value of values) {
+    const prop =
+      typeof iteratee === "function" ? iteratee(value) : value[iteratee];
+
+    prop in obj ? obj[prop].push(value) : (obj[prop] = [value]);
+  }
+
+  return obj;
+}
+
+console.log(groupBy([1.2, 1.3, 1.4, 1.5, 3, 3], Math.floor));
+
+console.log(groupBy(["one", "two", "three"], "length"));
+
+//: Design a uitility on an array of objects where the access can be made to the object using index (as usual) and also from primary key of the object.
+
+// Example
+const employees = [
+  { name: "John", id: "1" },
+  { name: "Jane", id: "2" },
+  { name: "Pai", id: "0" },
+];
+
+const flexEmployees = new Proxy(employees, {
+  get(target, handler) {
+    if (handler in target) {
+      return target[handler];
+    }
+    if (typeof handler === "string") {
+      return target.find((obj) => obj.name === handler);
+    } else {
+      return undefined;
+    }
+  },
+});
+
+flexEmployees[0]; // { name: 'John', id: '1' }
+flexEmployees["Pai"]; // { name: 'Pai', id: '0' }
+flexEmployees["doe"]; // undefined
+
+//: Write a function which recives an object and return a true if the object has circular reference
+
+function doesObjectHaveCircularReference(obj) {
+  try {
+    JSON.stringify(circularReference);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// Example
+var circularReferenceObj = { data: 123 };
+circularReferenceObj.myself = circularReferenceObj;
+
+//: Write a code which can eliminate circular references in an object (cyclic reference in an object)
+
+const getCircularReplacer = () => {
+  const seen = new WeakSet();
+  return (key, value) => {
+    if (typeof value === "object" && value !== null) {
+      if (seen.has(value)) {
+        return;
+      }
+      seen.add(value);
+    }
+    return value;
+  };
+};
+
+JSON.stringify(circularReferenceObj, getCircularReplacer());
+
+// 2nd =>
+
+function removeCircularRef(obj) {
+  const set = new WeakSet([obj]);
+
+  (function iterateObj(obj = circularReference) {
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        if (typeof obj[key] === "object")
+          if (set.has(obj[key])) delete obj[key];
+          else {
+            set.add(obj[key]);
+            iterateObj(obj[key]);
+          }
+      }
+    }
+  })();
+}
+
+//: Provide an object on which a value can be set to nested property even if it does not exist.
+
+function ProxyObject(obj) {
+  return new Proxy(obj, {
+    get: (target, property) => {
+      if (!(property in target)) {
+        target[property] = new ProxyObject({});
+      }
+      return target[property];
+    },
+  });
+}
+
+// driver code
+const obj = new ProxyObject({});
+obj.x.y.z = "nested value";
+
+obj.x.y.z; // nested value
