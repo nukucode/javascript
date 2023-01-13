@@ -99,3 +99,102 @@ function bark() {
 
 bark.animal = "dog";
 
+//: 11.What the output?
+
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const member = new Person("Ankit", "Yadav");
+Person.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+console.log(member.getFullName());
+
+// 12.What's the output?
+
+function Person2(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const ankit = new Person2("Ankit", "Yadav");
+const ram = Person2("Ram", "Yadav");
+
+console.log(ankit);
+console.log(ram);
+
+//: 13.What are the three phase of event propagation?
+
+// => Target > Capturing > Bubbling
+// => Bubbling > Taget > Capturing
+// => Taget > Bubbling > Capturing
+// => Capturing > Target > Bubbling
+
+//: 14.All object have prototypes
+
+// => True
+// => False
+
+//: 14.What's the output?
+
+function sum(a, b) {
+  return a + b;
+}
+
+sum(1, "2");
+
+//: 16.What's the output?
+
+let number = 0;
+console.log(number++);
+console.log(++number);
+console.log(number);
+
+//: 17.What's the output?
+
+function getPerson(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
+}
+
+const user = "Ankit";
+const age = 18;
+
+getPerson`${user} is ${age} years old`;
+
+//: What's the output?
+
+function checkAge(data) {
+  if (data === { age: 18 }) {
+    console.log("You are an adult!");
+  }
+  if (data == { age: 18 }) {
+    console.log("You can still be adult!");
+  } else {
+    console.log("Hmm... You don't have an age I guess");
+  }
+}
+
+checkAge({ age: 18 });
+
+//: 19.What's the output
+
+function getAge(...args) {
+  console.log(typeof args);
+}
+
+getAge(21);
+
+//: 20 What's the output?
+
+function getName() {
+  "use strict";
+  name = "Ankit";
+  console.log(name);
+}
+
+getName();
