@@ -66,6 +66,23 @@ console.log(barObj.getName === barObj2.getName); // true
 
 /* Each and every Javascript function will have a prototype property which is of the object type. You can define your own properties under prototype. When you will use the function as a constructor function, all the instace of it will inherit properties from the protoype object.
 
-=> Now let's come to that __proto__ property you saw above. The __proto__ is simply a reference to the prototype object from which the instace has inherited.*/
+=> Now let's come to that __proto__ property you saw above. The __proto__ is simply a reference to the prototype object from which the instnace has inherited.*/
 
+/* Consider the code below. We already know creating an array with array literal will inherit properties from Array.prototype */
 
+var arr = [1, 2, 3, 4, 5];
+
+/* What I just above is The __proto__ is simply a reference to the prototype object from which the instance has inheritd. So arr.__proto__ should be the same with Array.prototype */
+
+arr.__proto__ === Array.prototype; // true
+
+/* Now we shouldn't access the prototype object with __proto__. According to MDN using __proto__ is highly discouraged and may not be supported in all browsers.The correct way doing this: */
+
+var prototypeArr = Object.getPrototypeOf(arr);
+
+prototypeArr === Array.prototype; // true
+prototypeArr === arr.__proto__; // true
+
+//* Prototype chaining & inheritance
+
+/* Prototype chaining means an object's dunder proto or proto property will point to another object instead of pointing to the constructor function prototype. If the other's dunder proto or proto property points to another object it will result in the chain.This is called prototype Chaining. */
