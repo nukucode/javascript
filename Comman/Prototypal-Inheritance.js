@@ -86,3 +86,43 @@ prototypeArr === arr.__proto__; // true
 //* Prototype chaining & inheritance
 
 /* Prototype chaining means an object's dunder proto or proto property will point to another object instead of pointing to the constructor function prototype. If the other's dunder proto or proto property points to another object it will result in the chain.This is called prototype Chaining. */
+
+///SuperType constructor function
+function SuperType() {
+  this.name = "Ankit";
+}
+
+//SuperType Prototype
+SuperType.prototype.getSuperName = function () {
+  return this.name;
+};
+
+//SubType prototype function
+function SubType() {
+  this.age = 18;
+}
+
+//Inherit ths properties from SuperType
+SubType.prototype = new SuperType();
+
+// Add new property to SUbType prototype
+SubType.prototype.getAge = function () {
+  return this.age;
+};
+
+///Create a SubType object
+var subTypeObj = new SubType();
+console.log(subTypeObj.name);
+console.log(subTypeObj.age);
+console.log(subTypeObj.getSuperName());
+console.log(subTypeObj.getAge());
+
+///* Problems with prototype chaining
+
+/* As all the properties of the super type prototype are shared among the child objects, if child modifies the property of the super type prototype, other children also get affected.
+
+? To fix this issue, we use the constructor to inherit the instance properties and prototype chaining to inherit methods and shared properties
+*/
+
+
+
