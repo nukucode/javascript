@@ -8,6 +8,9 @@ let i = 0; // i = 0
 let j = ++i; // i = 1, j = 1
 let k = --i; // i = 0, k = 0
 
+
+//* PostFIX
+
 let a = 0; // a = 0
 let b = a++; // b = 0; a = 1;
 let c = a--; // a = 0, c = 1
