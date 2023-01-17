@@ -198,3 +198,108 @@ function getName() {
 }
 
 getName();
+
+//: 21.What's the value of sum?
+
+const sum = eval("10*10+5");
+
+//: 22.How long is cool_secret accessible?
+
+sessionStorage.setItem("cool_secret", 123);
+
+//: 23.What's the output?
+var num = 8;
+var num = 10;
+
+console.log(num);
+
+//: 24.What the output?
+const obj = { 1: "a", 2: "b", 3: "c" };
+const set = new Set([1, 2, 3, 4]);
+
+obj.hasOwnProperty("1");
+obj.hasOwnProperty(1);
+set.has("1");
+set.has(1);
+
+// 25.What's the output?
+const objj = { a: one, b: two, a: three };
+console.log(objj);
+
+//: The JavaScript global execution context creates two things for you: the global object and the "this" keyword
+
+//: 27.What's the output?
+
+for (let i = 1; i < 5; i++) {
+  if (i === 3) continue;
+  console.log(i);
+}
+
+//: 28.What's the output?
+
+String.prototype.giveAnkitPizza = () => {
+  return `Just give Ankit Pizza already!`;
+};
+
+const name = "Ankit";
+
+console.log(name.giveAnkitPizza());
+
+//: 29.What's the output?
+
+const w = {};
+const y = { key: "b" };
+const z = { key: "c" };
+
+w[y] = 123;
+w[z] = 456;
+
+console.log(w[y]);
+
+//: 30.What's the output?
+
+const foo = () => console.log("First");
+const bar = () => setTimeout(() => console.log("Second"));
+const baz = () => console.log("Third");
+
+//: 31.What is the event.target when clicking the button?
+
+<div onclick="console.log('first div')">
+  <div onclick="console.log('second div')">
+    <button onclick="console.log('button')">Click!</button>
+  </div>
+</div>;
+
+//: 32.When you click the paragraph, what's the logged output?
+
+<div onclick="console.log('div')">
+  <p onclick="console.log('p')">Click here!</p>
+</div>;
+
+//: 33:What's the output?
+
+const person = { name: "Ankit" };
+
+function sayHi(age) {
+  return `${this.name} is ${age}`;
+}
+
+console.log(sayHi.call(person, 21));
+console.log(sayHi.bind(person, 21));
+
+//: 34.What's the output?
+
+function sayHello() {
+  return (() => 0)();
+}
+
+console.log(typeof sayHi());
+
+//: 35.Which of these values are falsy?
+
+0;
+new Number(0);
+("");
+(" ");
+new Boolean(false);
+undefined;
