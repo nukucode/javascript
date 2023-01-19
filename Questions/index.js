@@ -303,3 +303,79 @@ new Number(0);
 (" ");
 new Boolean(false);
 undefined;
+
+//: 36.What's the output?
+
+console.log(typeof typeof 1);
+
+//: 37.What's the output?
+
+const numbers = [1, 2, 3];
+numbers[10] = 11;
+console.log(numbers);
+
+//: 38.What's the output?
+
+(() => {
+  let x, y;
+  try {
+    throw new Error();
+  } catch (x) {
+    (x = 1), (y = 2);
+    console.log(x);
+  }
+  console.log(x);
+  console.log(y);
+})();
+
+//: 39.Everything in JavaScript is either a...
+
+//: 40.What's the output?
+
+[
+  [0, 1],
+  [2, 3],
+].reduce(
+  (acc, cur) => {
+    acc.concat(cur);
+  },
+  [1, 2] // => initial value
+);
+
+//: 41:What's the output?
+
+!!null;
+!!"";
+!!1;
+
+//: 42.What does the setInterval method return in the browser?
+
+setInterval(() => console.log("Hi", 1000));
+
+//: 43.What does this return?
+
+[..."Ankit"];
+
+//: 44: What's the output?
+
+function* generator(i) {
+  yield 1;
+  yield i * 2;
+}
+
+const gen = generator(10);
+
+console.log(gen.next().value);
+console.log(gen.next().value);
+
+//: 45.What does this return?
+
+const firstPromise = new Promise((resolve, reject) => {
+  setTimeout(resolve, 500, "one");
+});
+
+const secondPromise = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "two");
+});
+
+Promise.race([firstPromise, secondPromise]).then((res) => console.log(res));
