@@ -379,3 +379,6 @@ const secondPromise = new Promise((resolve, reject) => {
 });
 
 Promise.race([firstPromise, secondPromise]).then((res) => console.log(res));
+
+
+//: 46.What the Output?
